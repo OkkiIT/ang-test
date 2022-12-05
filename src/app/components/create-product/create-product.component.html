@@ -1,0 +1,11 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <input
+    class="border w-full py-2 px-4 mb-2"
+    placeholder="Product name"
+    type="text"
+    formControlName="title"
+    appFocus
+  >
+  <p *ngIf="title.errors?.minlength && title.touched" class="text-red-600 font-medium mb-2">Min length is 6 symbols.</p>
+  <button type="submit" class="py-2 px-4 bg-blue-600 text-white">Create</button>
+</form>
